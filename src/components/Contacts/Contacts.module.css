@@ -1,0 +1,19 @@
+.contactsList {
+  font-size: 20px;
+  line-height: 15px;
+}
+
+.contactsList__button {
+  text-decoration: none;
+  margin: 5px 10px;
+  border-radius: 1px;
+  background-color: rgb(16, 198, 243);
+}
+
+.contactsList__button:focus {
+  background-color: rgb(185, 182, 9);
+}
+
+.contactsList__button:hover {
+  background-color: rgb(185, 182, 9);
+}

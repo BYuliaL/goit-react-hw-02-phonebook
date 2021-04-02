@@ -1,0 +1,23 @@
+.form__button {
+  margin-top: 25px;
+  text-decoration: none;
+  line-height: 30px;
+  font-size: 20px;
+  margin: 5px 10px;
+  border-radius: 1px;
+  background-color: rgb(16, 198, 243);
+}
+
+.form__button:focus {
+  background-color: rgb(13, 168, 104);
+}
+
+.form__button:hover {
+  background-color: rgb(13, 168, 104);
+}
+
+.form__label {
+  font-size: 20px;
+  line-height: 15px;
+  color: rgb(31, 109, 211);
+}
