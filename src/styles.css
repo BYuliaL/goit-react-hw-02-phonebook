@@ -13,8 +13,10 @@ code {
 }
 
 body {
+  background-image: url(./image/bush.png);
+  background-repeat: no-repeat;
+  background-size: cover;
   margin: 0;
-  background-color: rgb(192, 243, 218);
   color: #2a2a2a;
   line-height: 1.5;
 }

@@ -17,19 +17,19 @@ class App extends Component {
   };
 
   formSubmitHandler = ({ name, number }) => {
+    const data = {
+      id: shortid.generate(),
+      name,
+      number,
+    };
+
     const inputValue = this.state.contacts
-      .map((contact) => contact.name)
-      .includes(name);
+      .map((contact) => contact.name.toLowerCase())
+      .includes(name.toLowerCase());
 
     if (inputValue) {
       alert(`Name '${name}' is already in contacts`);
     } else {
-      const data = {
-        id: shortid.generate(),
-        name,
-        number,
-      };
-
       this.setState((prevState) => ({
         contacts: [data, ...prevState.contacts],
       }));

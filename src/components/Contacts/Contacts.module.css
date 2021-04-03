@@ -6,6 +6,11 @@
 .contactsList__button {
   text-decoration: none;
   margin: 5px 10px;
-  border-radius: 1px;
-  background-color: rgb(112, 116, 116);
+  appearance: none;
+  border: 0;
+  border-radius: 5px;
+  background: #4676d7;
+  color: #fff;
+  padding: 8px 16px;
+  font-size: 16px;
 }

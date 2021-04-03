@@ -1,6 +1,4 @@
 import { Component } from "react";
-import shortid from "shortid";
-// import PropTypes from "prop-types";
 import styles from "./Form.module.css";
 
 class Form extends Component {
@@ -9,15 +7,9 @@ class Form extends Component {
     number: "",
   };
 
-  nameInputId = shortid.generate();
-  telInputId = shortid.generate();
-
-  handleNameChange = (event) => {
-    this.setState({ name: event.currentTarget.value });
-  };
-
-  handleTelChange = (event) => {
-    this.setState({ number: event.currentTarget.value });
+  handleChange = ({ target }) => {
+    const { name, value } = target;
+    this.setState({ [name]: value });
   };
 
   handleSubmit = (event) => {
@@ -34,30 +26,28 @@ class Form extends Component {
   render() {
     return (
       <form onSubmit={this.handleSubmit} className={styles.form}>
-        <label htmlFor={this.nameInputId} className={styles.form__label}>
+        <label className={styles.form__label}>
           Name
           <br />
           <input
             className={styles.form__input}
             type="text"
             value={this.state.name}
-            onChange={this.handleNameChange}
+            onChange={this.handleChange}
             name="name"
-            id={this.nameInputId}
             pattern="^[a-zA-Zа-яА-Я]+(([' -][a-zA-Zа-яА-Я ])?[a-zA-Zа-яА-Я]*)*$"
             title="Имя может состоять только из букв, апострофа, тире и пробелов. Например Adrian, Jacob Mercer, Charles de Batz de Castelmore d'Artagnan и т. п."
             required
           />
         </label>
         <br />
-        <label htmlFor={this.telInputId} className={styles.form__label}>
+        <label className={styles.form__label}>
           Namber
           <br />
           <input
             className={styles.form__input}
-            id={this.telInputId}
             value={this.state.number}
-            onChange={this.handleTelChange}
+            onChange={this.handleChange}
             type="tel"
             name="number"
             pattern="(\+?( |-|\.)?\d{1,2}( |-|\.)?)?(\(?\d{3}\)?|\d{3})( |-|\.)?(\d{3}( |-|\.)?\d{4})"
@@ -73,10 +63,5 @@ class Form extends Component {
     );
   }
 }
-
-// Form.propTypes = {
-//   name: PropTypes.string.isRequired,
-//   number: PropTypes.string.isRequired,
-// };
 
 export default Form;
